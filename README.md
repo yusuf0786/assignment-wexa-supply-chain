@@ -2,7 +2,7 @@
 
 A Next.js application backed by CognoDB (Neo4j) for visualizing and simulating risk across a multi-tier global supply chain.
 
-**Live Demo:** [Insert your hosted demo link here]
+**Live Demo:** [https://assignment-wexa-supply-chain.vercel.app/](https://assignment-wexa-supply-chain.vercel.app/)
 **Demo Video:** [Insert your Loom or screen recording link here]
 
 ---
@@ -122,7 +122,7 @@ NEO4J_PASSWORD=<your-saved-password>
 Seed the graph database with the sample data:
 
 ```bash
-npx tsx scripts/seed.ts
+npx tsx --env-file=.env.local scripts/seed.ts
 ```
 
 Then start the Next.js development server:
@@ -140,8 +140,6 @@ http://localhost:3000
 ---
 
 ## 5. UI Screenshots
-
-> Replace the placeholders below with screenshots of your running application.
 
 ### Main Dashboard
 

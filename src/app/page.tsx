@@ -52,13 +52,13 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 p-8 font-sans">
+    <div className="min-h-screen bg-gray-50 text-gray-900 p-4 md:p-8 font-sans">
       <div className="max-w-5xl mx-auto space-y-8">
         
         {/* Header */}
         <header>
-          <h1 className="text-3xl font-bold tracking-tight">Supply Chain Risk Analyzer</h1>
-          <p className="text-gray-500 mt-2">
+          <h1 className="text-xl md:text-3xl font-bold tracking-tight">Supply Chain Risk Analyzer</h1>
+          <p className="text-md md:text-lg text-gray-500 mt-2">
             Powered by CognoDB. Discover hidden vulnerabilities across multi-tier dependencies.
           </p>
         </header>
@@ -67,9 +67,9 @@ export default function Dashboard() {
           
           {/* Main Simulation Area */}
           <div className="md:col-span-2 space-y-6">
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div className="bg-white p-3 md:p-6 rounded-xl shadow-sm border border-gray-100">
               <h2 className="text-xl font-semibold mb-4">Simulate Supplier Failure</h2>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 <select 
                   className="flex-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   value={selectedSupplier}
@@ -83,7 +83,7 @@ export default function Dashboard() {
                 <button 
                   onClick={runSimulation}
                   disabled={!selectedSupplier || isSimulating}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium disabled:opacity-50 transition-colors"
+                  className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium disabled:opacity-50 transition-colors text-nowrap"
                 >
                   {isSimulating ? 'Analyzing Graph...' : 'Run Simulation'}
                 </button>
@@ -91,8 +91,8 @@ export default function Dashboard() {
             </div>
 
             {/* Results Area */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 min-h-62.5">
-              <h2 className="text-xl font-semibold mb-4">Blast Radius (Affected Products)</h2>
+            <div className="bg-white p-3 md:p-6 rounded-xl shadow-sm border border-gray-100 md:min-h-62.5">
+              <h2 className="text-xl font-semibold mb-4">Blast Radius <span className="text-nowrap">(Affected Products)</span></h2>
               
               {/* Empty State */}
               {!impactData && !isSimulating && !simError && (
@@ -122,9 +122,9 @@ export default function Dashboard() {
                     <p className="text-green-600">No end products are affected by this supplier.</p>
                   ) : (
                     impactData.map((product) => (
-                      <div key={product.id} className="flex justify-between p-4 bg-gray-50 border border-gray-100 rounded-lg">
+                      <div key={product.id} className="flex flex-col sm:flex-row justify-between p-2 md:p-4 bg-gray-50 border border-gray-100 rounded-lg">
                         <span className="font-medium">{product.name}</span>
-                        <span className="text-sm bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                        <span className="text-sm bg-gray-200 text-gray-700 px-2 py-1 rounded self-end sm:self-auto">
                           {product.category}
                         </span>
                       </div>
@@ -136,7 +136,7 @@ export default function Dashboard() {
           </div>
 
           {/* Sidebar / Insights */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 h-fit">
+          <div className="bg-white p-3 md:p-6 rounded-xl shadow-sm border border-gray-100 h-fit">
             <h2 className="text-xl font-semibold mb-4">Structural Bottlenecks</h2>
             <p className="text-sm text-gray-500 mb-4">
               Components supplied by exactly ONE vendor globally.
