@@ -3,7 +3,7 @@
 A Next.js application backed by CognoDB (Neo4j) for visualizing and simulating risk across a multi-tier global supply chain.
 
 **Live Demo:** [https://assignment-wexa-supply-chain.vercel.app/](https://assignment-wexa-supply-chain.vercel.app/)
-**Demo Video:** [Insert your Loom or screen recording link here]
+**Demo Video:** [https://streamable.com8h12vi](https://streamable.com/8hl2vi)
 
 ---
 
@@ -145,13 +145,13 @@ http://localhost:3000
 
 The main dashboard provides the simulation controls and displays currently identified supply-chain bottlenecks.
 
-![Main Dashboard](./screenshots/dashboard.png)
+![Main Dashboard](public/screenshots/dashboard.png)
 
 ### Blast Radius Simulation
 
 The blast radius view shows the products and downstream components affected by simulating the failure of a supplier.
 
-![Blast Radius Results](./screenshots/blast-radius.png)
+![Blast Radius Results](public/screenshots/blast-radius.png)
 
 ---
 
